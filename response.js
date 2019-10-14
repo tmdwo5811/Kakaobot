@@ -17,16 +17,21 @@ function getWeathetInfo(pos) {
     } catch(e) {
         return null;
     }
-
-
 }
+
+
+
 function response(room, msg, sender, isGroupChat, replier, lv) {
+
+    if(msg == "//시작"){
+      replier.reply("메이플 엘리시움 서버","좋은밤 보내세요~")
+    }
+
     msg = msg.trim();
     var lv = [0,1,2,3,4,5,6,7,8,9,10]
     lv_min = 15;
     lv_max = 30;
 
-    if(lv_min < lv && lv_max < lv)
     var cmd = msg.split(" ")[0];
     var data = msg.replace(cmd + " ", "");
     if(cmd == "/날씨") {
@@ -37,6 +42,7 @@ function response(room, msg, sender, isGroupChat, replier, lv) {
             replier.reply(result);
         }
     }
+
     if(msg == "시그너스님 안녕하세요" || msg == "시그너스님 하이" || msg == "시그너스님 헬로" || msg == "커맨드?" || msg == "명령어?" ){
       replier.reply("메이플 용사님, 안녕하세요:)\n사용 가능한 명령어는 아래와 같습니다.\n\n1) /무자본 사냥터 XXX레벨\n"+
     "2) /유자본 사냥터 XXX레벨\n3) /메소 시세\n4) /필수 링크 캐릭");
@@ -74,13 +80,13 @@ function response(room, msg, sender, isGroupChat, replier, lv) {
           }else if(lvnum > 110 && lvnum <= 120) {
             replier.reply("[110~120Lv 추천 사냥터]\n루디브리엄성 장난감공장<1공정>6구역,기계실");
           }else if(lvnum > 120 && lvnum <= 125) {
-            replier.reply("[120~125Lv 추천 사냥터]\n루디브리엄 시계탑 최하층<꼬여버린시간>\n엘나스 폐광 늑대의 영역\n뒤틀린 화랑\n잊혀진 화랑");
+            replier.reply("[120~125Lv 추천 사냥터]\n루디브리엄 시계탑 최하층<꼬여버린시간>\n엘나스 폐광 늑대의 영역\n뒤틀린 회랑\n잊혀진 회랑");
           }else if(lvnum > 125 && lvnum <= 130) {
             replier.reply("[125~130Lv 추천 사냥터]\n아랫마을 현상금 퀘스트");
           }else if(lvnum > 130 && lvnum <= 140) {
             replier.reply("[130~140Lv 추천 사냥터]\n폐광 시련의 동굴1");
           }else if(lvnum > 140 && lvnum <= 160) {
-            replier.reply("[140~160Lv 추천 사냥터]\n커닝타워 2층\n커닝타워 5층");
+            replier.reply("[140~160Lv 추천 사냥터]\n커닝타워 2층 *80\n커닝타워 5층 *80");
           }else if(lvnum > 160 && lvnum <= 180) {
             replier.reply("[160~180Lv 추천 사냥터]\n지구방위본부 H01-H03");
           }else if(lvnum > 180 && lvnum <= 190) {
@@ -97,40 +103,48 @@ function response(room, msg, sender, isGroupChat, replier, lv) {
           replier.reply("[0~10Lv 추천 사냥터]\n스토리 퀘스트");
         }else if(lvnum > 10 && lvnum <= 20 ){
           replier.reply("[10~20Lv 추천 사냥터]\n골렘의 사냥터");
-        }else if(lvnum > 20 && lvnum <= 30 ){
-          replier.reply("[20~30Lv 추천 사냥터]\n엘로딘 깊어지는 숲 1");
-        }else if(lvnum > 30 && lvnum <= 46) {
-          replier.reply("[30~46Lv 추천 사냥터]\n골드비치 퀘스트");
-        }else if(lvnum > 46 && lvnum <= 56) {
-          replier.reply("[46~56Lv 추천 사냥터]\n제 1 군영");
-        }else if(lvnum > 56 && lvnum <= 60) {
-          replier.reply("[56~60Lv 추천 사냥터]\n조용한 습지");
-        }else if(lvnum > 60 && lvnum <= 64) {
-          replier.reply("[60~64Lv 추천 사냥터]\n얼음 골짜기 2");
-        }else if(lvnum > 64 && lvnum <= 70) {
-          replier.reply("[64~70Lv 추천 사냥터]\n레벤 광산 갱도 4");
+        }else if(lvnum > 20 && lvnum <= 35 ){
+          replier.reply("[20~35Lv 추천 사냥터]\n엘로딘 깊어지는 숲 1");
+        }else if(lvnum > 35 && lvnum <= 45) {
+          replier.reply("[36~45Lv 추천 사냥터]\n골드비치 퀘스트");
+        }else if(lvnum > 45 && lvnum <= 50) {
+          replier.reply("[46~50Lv 추천 사냥터]\n와일드 보어의 땅");
+        }else if(lvnum > 50 && lvnum <= 60) {
+          replier.reply("[51~60Lv 추천 사냥터]\n제 1군영");
+        }else if (lvnum == 61) {
+          replier.reply("[61Lv 추천 사냥터]\n이지 자쿰");
+        }else if(lvnum > 61 && lvnum <= 70) {
+          replier.reply("[62~70Lv 추천 사냥터]\n조용한습지\n모래성 놀이터");
         }else if(lvnum > 70 && lvnum <= 80) {
-          replier.reply("[70~80Lv 추천 사냥터]\n사헬지대2\n잠자는 사막");
+          replier.reply("[71~80Lv 추천 사냥터]\n사헬지대2\n잠자는 사막");
         }else if(lvnum > 80 && lvnum <= 93) {
-          replier.reply("[80~93Lv 추천 사냥터]\n관계자 외 출입급지 C-1");
+          replier.reply("[81~93Lv 추천 사냥터]\n관계자 외 출입금지 C-1");
         }else if(lvnum > 93 && lvnum <= 100) {
-          replier.reply("[93~100Lv 추천 사냥터]\n하늘 테라스 5");
+          replier.reply("[94~100Lv 추천 사냥터]\n푸른 켄타우로스의 영역(썬콜상성금지)\n가파른 언덕");
         }else if(lvnum > 100 && lvnum <= 110) {
-          replier.reply("[100~110Lv 추천 사냥터]\n산양의 골짜기2");
-        }else if(lvnum > 110 && lvnum <= 130) {
-          replier.reply("[110~130Lv 추천 사냥터]\n삐뚤어진 시간\n뒤틀린 회랑\n잊혀진 회랑");
-        }else if(lvnum > 130 && lvnum <= 140) {
-          replier.reply("[130~140Lv 추천 사냥터]\n시련의 동굴 1");
-        }else if(lvnum > 140 && lvnum <= 160) {
-          replier.reply("[140~160Lv 추천 사냥터]\n커닝타워 2층\n커닝타워 5층");
-        }else if(lvnum > 160 && lvnum <= 186) {
-          replier.reply("[160~186Lv 추천 사냥터]\n크리티아스");
-        }else if(lvnum > 186 && lvnum <= 200) {
-          replier.reply("[186~200Lv 추천 사냥터]\n버려진 발굴 지역 2, 4");
+          replier.reply("[101~110Lv 추천 사냥터]\n날카로운 절벽3\n날카로운 절벽4");
+        }else if(lvnum > 110 && lvnum <= 120) {
+          replier.reply("[111~120Lv 추천 사냥터]\n시계탑 최하층 : 잊혀진 시간의 길 2");
+        }else if(lvnum > 120 && lvnum <= 130) {
+          replier.reply("[121~130Lv 추천 사냥터]\n무릉 상급 수련장\n폐광 1~4");
+        }else if(lvnum > 130 && lvnum <= 135) {
+          replier.reply("[131~135Lv 추천 사냥터]\n아랫마을 퀘스트\n시련의 동굴 1~2");
+        }else if(lvnum > 135 && lvnum <= 145) {
+          replier.reply("[136~145Lv 추천 사냥터]\n검은 와이번의 둥지\n시간의 신전 퀘스트");
+        }else if(lvnum > 145 && lvnum <= 160) {
+          replier.reply("[146~160Lv 추천 사냥터]\n커닝타워 2층 카페 *80");
+        }else if(lvnum > 160 && lvnum <= 170) {
+          replier.reply("[161~170Lv 추천 사냥터]\n크리티아스 타락한 마력의숲 2");
+        }else if(lvnum > 170 && lvnum <= 180) {
+          replier.reply("[171~180Lv 추천 사냥터]\n크리티아스 스토리 퀘스트\n크리티아스 암흑의 숲 1/2");
+        }else if(lvnum > 180 && lvnum <= 190) {
+          replier.reply("[181~190Lv 추천 사냥터]\n황혼의 페리온 적막한 바위길");
+        }else if(lvnum > 190 && lvnum <= 200) {
+          replier.reply("[191~200Lv 추천 사냥터]\n헤이븐 구해줘서 고마워 퀘스트\n황혼의 페리온\n기계무덤 3");
         }else if(lvnum > 200 && lvnum <= 210) {
-          replier.reply("[200~210Lv 추천 사냥터]\n풍화된 분노와 슬픔의땅\n동굴의 동쪽길2\n동굴 아래쪽\n동굴의 깊숙한 곳");
+          replier.reply("[201~210Lv 추천 사냥터]\n풍화된 분노와 슬픔의땅\n동굴의 동쪽길2\n동굴 아래쪽\n동굴의 깊숙한 곳");
         }else if(lvnum > 210 && lvnum <= 220) {
-          replier.reply("[210~220Lv 추천 사냥터]\n몽땅동글숲1\n츄깊\n격류지대3");
+          replier.reply("[211~220Lv 추천 사냥터]\n몽땅 동글숲1\n츄깊\n격류지대3");
         }
      }
   }
