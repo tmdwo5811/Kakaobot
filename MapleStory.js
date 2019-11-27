@@ -2,7 +2,7 @@ const scriptName="kakaobott.js";
 
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
 
-      //웹 파싱 이후 필요한 정보만 추출 [Seungjae]
+      //웹 크롤링 이후 필요한 정보만 추출 [Seungjae]
       var mapleEvent = Utils.getWebText("https://maplestory.nexon.com/News/Event");
       mapleEvent = mapleEvent.split('<a class="active">1</a>');
       mapleEvent = mapleEvent[0];
