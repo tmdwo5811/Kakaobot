@@ -27,7 +27,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
       var hh = today.getHours();
 
 
-      
+
       if(dd<10){
         dd='0'+dd;
       }
@@ -52,9 +52,6 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
       //     timer.schedule(task,delay1,delay2);
       //     return ms;
       // }
-
-      //유니온 캐릭터 ------------------------------
-
 
 
       msg = msg.trim();
