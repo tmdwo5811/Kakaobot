@@ -26,6 +26,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
       var yyyy = today.getFullYear();
       var hh = today.getHours();
 
+
       
       if(dd<10){
         dd='0'+dd;
